@@ -1,4 +1,4 @@
-package com.tweetapp;
+package com.java.foodorderapp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,7 +23,7 @@ public class ResetPassword {
 	        ps.setString(1, pass);
 	        ps.setString(2, SignIn.email1);
             ps.executeUpdate();
-            System.out.println("your password is reset successfully");
+            System.out.println("your password is  reset successfully");
 
            } catch (SQLException e) {
                e.printStackTrace();

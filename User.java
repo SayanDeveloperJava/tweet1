@@ -1,7 +1,8 @@
-package com.tweetapp;
+package com.java.foodorderapp;
 
 import java.util.Scanner;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class User {
 	
@@ -33,57 +34,48 @@ public class User {
 			
 		}
 	}
+	
+public static void menuForLoggedInUser(SignUp sup,SignIn sin,ForgetPassword fp) {
 		
-	public static void menuForLoggedInUser(SignUp sup,SignIn sin,ForgetPassword fp) {
-			
-			while(true) {
-				System.out.println("1.Post a tweet 2.View all your tweets 3.View all tweets"
-						+ " 4.View all users 5.Reset password 6.Logout");
-				System.out.println("Enter your choice");
-				Scanner sc=new Scanner(System.in);
-				int ch1=sc.nextInt();
-				switch (ch1) { 
-			      case 1:
-			    	  PostTweet.postATweet();
-			        break;
-			      case 2:
-			    	  System.out.println("your tweets is here");
-			    	  ViewAllYourTweets.viewAllYourTweets();
-			        break;
-			      case 3:
-			    	  System.out.println("all user tweets is here");
-			    	  ViewAllUserTweets.viewAllUserTweets();
-			        break;
-			      case 4:
-			    	  System.out.println("Say hi to all users");
-			    	  ViewAllUsers.viewAllUser();
-				        break; 
-			      case 5:
-				        ResetPassword.resetPassword();
-				        break;  
-			      case 6:
-				        System.out.println("logout successfully");
-				        User.guestUserMenu(sup,sin,fp);
-				        break;
+		while(true) {
+			System.out.println(" 1.View all food items 2.Reset password 3.Logout");
+			System.out.println("Enter your choice");
+			Scanner sc=new Scanner(System.in);
+			int ch1=sc.nextInt();
+			switch (ch1) { 
+		      case 1:
+		    	  System.out.println("-------------all food items is here------------" );
+		    	  ViewAllFoodItems.viewAllFoodItems();
+			        break; 
+		      case 2:
+			        ResetPassword.resetPassword();
+			        break;  
+		      case 3:
+			        System.out.println("logout successfully");
+			        User.guestUserMenu(sup,sin,fp);
 			        
-			      default:
-			    	    System.out.println("please choose a valid options");  
-			      
-			   
-				}
-				
+			        break;
+		        
+		      default:
+		    	    System.out.println("please choose a valid options");  
+		      
+		   
 			}
 			
-	
 		}
-	
-		public static void main(String[] args) {
+		
+
+	}
+
+
+	public static void main(String[] args) {
+		
+		SignUp sup=new SignUp();
+		SignIn sin=new SignIn();
+		ForgetPassword fp=new ForgetPassword();
+		User.guestUserMenu(sup,sin,fp);
+		
 			
-			SignUp sup=new SignUp();
-			SignIn sin=new SignIn();
-			ForgetPassword fp=new ForgetPassword();
-			User.guestUserMenu(sup,sin,fp);
-				
-		}
+	}
 
 }

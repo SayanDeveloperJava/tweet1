@@ -1,4 +1,4 @@
-package com.tweetapp;
+package com.java.foodorderapp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SignIn {
-	static final String DB_url = "jdbc:mysql://localhost:3306/casestudy";
+	static final String DB_url = "jdbc:mysql://localhost:3306/foodorder";
     static final String user = "root";
     static final String pass = "pass@word1";
-    static final String Query = "select * from registration where email=? AND password=?;";
+    static final String Query = "select * from login where email=? AND password=?;";
     int flag=0;
     static String email1="";
     static String password1="";
@@ -48,4 +48,3 @@ public class SignIn {
         }
     }
 }
-

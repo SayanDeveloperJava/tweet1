@@ -1,4 +1,4 @@
-package com.tweetapp;
+package com.java.foodorderapp;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,10 +7,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class SignUp {
-	static final String DB_url = "jdbc:mysql://localhost:3306/casestudy";
+	static final String DB_url = "jdbc:mysql://localhost:3306/foodorder";
     static final String user = "root";
     static final String pass = "pass@word1";
-    static final String Query = "insert into registration(first_name,email,password) values(?,?,?)";
+    static final String Query = "insert into login(first_name,email,password) values(?,?,?)";
 	
 	public void signUp(){
 
@@ -28,7 +28,6 @@ public class SignUp {
 	        ps.setString(2, email);
 	        ps.setString(3, passw);
 	        ps.executeUpdate();
-	        System.out.println("registration is successful");
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
